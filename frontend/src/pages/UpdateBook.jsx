@@ -48,7 +48,7 @@ const UpdateBook = () => {
 
   useEffect(() => {
     fetchBook(params.id)
-  }, [fetchBook, params])
+  }, [fetchBook, params.id])
 
   useEffect(() => {
     if (book) {
