@@ -266,9 +266,7 @@ app.post('/api/update-book/:id', async (req, res) => {
             const fileName = parts[parts.length - 1]
 
             const imageId = fileName.split('.')[0]
-            cloudinary.uploader
-                .destroy(`library/${imageId}`)
-                .then((result) => console.log('result', result))
+            await cloudinary.uploader.destroy(`library/${imageId}`)
 
             // upload new image
             const imageResponse = await cloudinary.uploader.upload(image, {
